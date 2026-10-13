@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "author": "Shubham Kumar Jha",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-ntc-temperature-sensor", "id": "ntc1", "top": -70, "left": 170, "attrs": {} },
+    { "type": "wokwi-pushbutton", "id": "btn1", "top": 130, "left": 170, "attrs": { "color": "green" } },
+    { "type": "wokwi-led", "id": "led1", "top": 130, "left": 260, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 190, "left": 250, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "ntc1:VCC", "esp:3V3", "red", [] ],
+    [ "ntc1:GND", "esp:GND.1", "black", [] ],
+    [ "ntc1:OUT", "esp:D34", "green", [] ],
+    [ "btn1:1.l", "esp:D25", "green", [] ],
+    [ "btn1:2.l", "esp:GND.1", "black", [] ],
+    [ "led1:A", "r1:1", "red", [] ],
+    [ "r1:2", "esp:D26", "red", [] ],
+    [ "led1:C", "esp:GND.1", "black", [] ]
+  ],
+  "dependencies": {}
+}
