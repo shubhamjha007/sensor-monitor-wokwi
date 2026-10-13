@@ -2,6 +2,8 @@
 
 Firmware for an ESP32 sensor node, simulated in the browser with Wokwi.
 
+   **[Run the simulation on Wokwi](https://wokwi.com/projects/477794880583281665)**
+
 ## Features
 - NTC temperature sensor read through the 12-bit ADC (Beta equation)
 - Button handled by a GPIO **interrupt**: the ISR only debounces and sets a flag; work happens in `loop()`
